@@ -1,11 +1,11 @@
-window.CANVAS = document.getElementById('game-canvas');
-
 const fps = 30;
 const msPerFrame = 1000 / fps;
 
 window.GAME = {
   ship: new Ship(CANVAS.width / 2, CANVAS.height / 2),
   update() {
+    const ctx = CANVAS.getContext('2d');
+    ctx.clearRect(0, 0, CANVAS.width, CANVAS.height);
     this.ship.update();
   },
   render() {
